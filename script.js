@@ -72,17 +72,24 @@ showWeatherData = (weatherData) => {
     document.getElementById('max-temp').innerText = weatherData.main.temp_max;
     document.getElementById("weather-output").classList.add("visible");
     document.getElementById("img-container").src = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
+    document.getElementById("img-container").style.height = '30%';
+    document.getElementById("img-container").style.width = '30%';
+
+
   } else {
     document.getElementById('city-name').innerText = weatherData.name;
     document.getElementById('weather-type').innerText = '--';
+    
+    document.getElementById("img-container").src = 'https://i.pinimg.com/originals/a1/e0/e8/a1e0e82e1cf23a9036e98ba202749edd.gif';
+    document.getElementById("img-container").style.height = '60%';
+    document.getElementById("img-container").style.width = '60%';
+
+
     document.getElementById('temp').innerText = '--';
     document.getElementById('min-temp').innerText = '--';
     document.getElementById('max-temp').innerText = '--';
     document.getElementById("weather-output").classList.add("visible");
-    document.getElementById("img-container").src = '--';
   }
-
-  
 
 }
 
